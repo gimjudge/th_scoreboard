@@ -18,6 +18,11 @@ const players = [
 		id: 4,
 		name: "James",
 		score: 80
+	},
+	{
+		id: 5,
+		name: "Dan",
+		score: 80
 	}
 ];
 
@@ -57,7 +62,7 @@ const App = (props) => {
 		<div className="scoreboard">
 			<Header 
 				title="Scoreboard" 
-				totalPlayers={4}
+				totalPlayers={props.initialPlayers.length}
 			/>
 
 			{/* Player List */}
