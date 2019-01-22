@@ -68,7 +68,7 @@ const App = (props) => {
 			{/* Player List */}
 			{props.initialPlayers.map ( player =>
 				<Player 
-					key = {player.id}
+					key = {player.id.toString()}
 					name = {player.name} 
 					score = {player.score} 
 				/>
