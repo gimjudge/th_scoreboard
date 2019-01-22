@@ -1,14 +1,13 @@
-const title = <h1>My first react Element! </h1>;
-const desc = <p>I just learned how to create a react node and render it into the dom.</p>;
-
-const header = React.createElement(
-    'header',
-    null,
-    title,
-    desc
-);
+function Header() {
+	return (
+		<header>
+			<h1>Scoreboard</h1>
+			<span className="stats">Player: 1</span>
+		</header>
+	);
+}
 
 ReactDOM.render(
-    header,
-    document.getElementById('root')
+	header,
+	document.getElementById('root')
 );
