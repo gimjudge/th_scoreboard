@@ -48,11 +48,16 @@ const Player = (props) => {
 }
 
 class Counter extends React.Component {
+
+	state = {
+		score: 2
+	}
+
 	render() {
 		return (
 			<div className="counter">
 				<button className="counter-action decrement"> - </button>
-				<span className="counter-score">{ this.props.score }</span>
+				<span className="counter-score">{ this.state.score }</span>
 				<button className="counter-action increment"> + </button>
 			</div>
 		);
@@ -71,8 +76,7 @@ const App = (props) => {
 			{props.initialPlayers.map ( player =>
 				<Player 
 					key = {player.id.toString()}
-					name = {player.name} 
-					score = {player.score} 
+					name = {player.name}
 				/>
 			)}
 		</div>
