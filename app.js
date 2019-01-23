@@ -50,7 +50,7 @@ const Player = (props) => {
 class Counter extends React.Component {
 
 	state = {
-		score: 2
+		score: 0
 	}
 
 	render() {
