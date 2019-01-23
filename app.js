@@ -11,6 +11,7 @@ const Player = (props) => {
 	return (
 		<div className="player">
 			<span className="player-name">
+				<button className="remove-player" onClick={() => props.removePlayer(props.id)}>✖</button>
 				{ props.name }
 			</span>
 
@@ -59,31 +60,34 @@ class App extends React.Component {
 		players: [
 			{
 				id: 1,
-				name: "Guil",
-				score: 50
+				name: "Guil"
 			},
 			{
 				id: 2,
-				name: "Treasure",
-				score: 85
+				name: "Treasure"
 			},
 			{
 				id: 3,
-				name: "Ashley",
-				score: 95
+				name: "Ashley"
 			},
 			{
 				id: 4,
-				name: "James",
-				score: 80
+				name: "James"
 			},
 			{
 				id: 5,
-				name: "Dan",
-				score: 80
+				name: "Dan"
 			}
 		]
 	};
+
+	handleRemovePlayer = (id) => {
+		this.setState( prevState => {
+			return {
+				players: prevState.players.filter(p => p.id !== id)
+			};
+		});
+	}
 	render() {
 		return (
 			<div className="scoreboard">
@@ -96,7 +100,9 @@ class App extends React.Component {
 				{this.state.players.map ( player =>
 					<Player 
 						key = {player.id.toString()}
+						id = {player.id}
 						name = {player.name}
+						removePlayer={this.handleRemovePlayer}
 					/>
 				)}
 			</div>
